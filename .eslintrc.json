@@ -1,0 +1,59 @@
+{
+  "extends": [
+    "airbnb",
+    "prettier",
+    "prettier/react",
+    "plugin:prettier/recommended",
+    "eslint-config-prettier"
+  ],
+  // "parser": "babel-eslint",
+  "parser": "@typescript-eslint/parser",
+  "rules": {
+    "import/extensions": [
+      "error",
+      "ignorePackages",
+      {
+        "js": "never",
+        "jsx": "never",
+        "ts": "never",
+        "tsx": "never"
+      }
+    ],
+    "no-console": "off",
+    "import/no-unresolved": "off",
+    "sort-imports": "off",
+    "react/jsx-filename-extension": [
+      1,
+      {
+        "extensions": [".js", ".jsx", ".ts", ".tsx"]
+      }
+    ],
+    "prettier/prettier": [
+      "error",
+      {
+        "trailingComma": "es5",
+        "singleQuote": true,
+        "printWidth": 80
+      }
+    ],
+    "react/jsx-props-no-spreading": "off"
+  },
+
+  "settings": {
+    "import/extensions": [".js", ".jsx", ".ts", ".tsx"],
+    "import/parsers": {
+      "@typescript-eslint/parser": [".ts", ".tsx"]
+    },
+    "import/resolver": {
+      "node": {
+        "extensions": [".js", ".jsx", ".ts", ".tsx"]
+      }
+    }
+  },
+
+  // For eliminating eslint issue in test cases. -- no-def-var -- not recognising global
+  // https://stackoverflow.com/questions/31629389/how-to-use-eslint-with-jest
+  "env": {"jest": true},
+
+  "plugins": ["prettier"]
+}
